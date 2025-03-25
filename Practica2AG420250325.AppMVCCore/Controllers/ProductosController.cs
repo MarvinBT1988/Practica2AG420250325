@@ -48,8 +48,8 @@ namespace Practica2AG420250325.AppMVCCore.Controllers
         // GET: Productos/Create
         public IActionResult Create()
         {
-            ViewData["BodegaId"] = new SelectList(_context.Bodegas, "Id", "Id");
-            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Id");
+            ViewData["BodegaId"] = new SelectList(_context.Bodegas, "Id", "Nombre");
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Nombre");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace Practica2AG420250325.AppMVCCore.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BodegaId"] = new SelectList(_context.Bodegas, "Id", "Id", producto.BodegaId);
-            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Id", producto.MarcaId);
+            ViewData["BodegaId"] = new SelectList(_context.Bodegas, "Id", "Nombre", producto.BodegaId);
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Nombre", producto.MarcaId);
             return View(producto);
         }
 
@@ -84,8 +84,8 @@ namespace Practica2AG420250325.AppMVCCore.Controllers
             {
                 return NotFound();
             }
-            ViewData["BodegaId"] = new SelectList(_context.Bodegas, "Id", "Id", producto.BodegaId);
-            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Id", producto.MarcaId);
+            ViewData["BodegaId"] = new SelectList(_context.Bodegas, "Id", "Nombre", producto.BodegaId);
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Nombre", producto.MarcaId);
             return View(producto);
         }
 
@@ -121,8 +121,8 @@ namespace Practica2AG420250325.AppMVCCore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BodegaId"] = new SelectList(_context.Bodegas, "Id", "Id", producto.BodegaId);
-            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Id", producto.MarcaId);
+            ViewData["BodegaId"] = new SelectList(_context.Bodegas, "Id", "Nombre", producto.BodegaId);
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Nombre", producto.MarcaId);
             return View(producto);
         }
 
