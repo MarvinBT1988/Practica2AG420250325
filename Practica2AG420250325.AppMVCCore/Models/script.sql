@@ -42,3 +42,6 @@ CREATE TABLE Usuarios (
     Rol VARCHAR(50) NOT NULL                -- Rol del usuario   
 );
 GO
+-- PASWWORD default 12345
+INSERT INTO Usuarios (Nombre, Email, Password, Rol)
+VALUES ('Admin', 'admin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'ADMINISTRADOR');
